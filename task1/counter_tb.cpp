@@ -36,7 +36,11 @@ int main(int argc, char **argv, char **env) {
         // Change rst and en signals during simulation
         top->rst = (i < 2) | (i == 15);
         top->en = (i > 4);
-
+        if(top->count == 10){
+            for(int k = 0; k < 3; k++){
+                i++;
+            }
+        }
         if (Verilated::gotFinish()) exit(0);
     }
     tfp->close();
