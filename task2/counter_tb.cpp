@@ -27,7 +27,9 @@ int main(int argc, char **argv, char **env) {
     // initialize simulation inputs
     top->clk = 1;
     top->rst = 1;
-    top->en = 0;
+    //top->en = 0;
+    //lab 1 task 2 challenge
+    top->en = vbdFlag();
 
     // run simulation for many clock cycles
     for (i = 0; i < 600; i++) {

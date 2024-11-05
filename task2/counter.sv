@@ -8,10 +8,11 @@ module counter #(
     output logic [WIDTH-1:0] count
 
 );
-
+//edited to make vbdflag change direction of counting (lab1 task2 challenge)
 always_ff @ (posedge clk)
     if (rst) count <= {WIDTH{1'b0}};
-    else count <= count + {{WIDTH-1{1'b0}}, en};
+    else if(en) count <= count + 1;
+    else count <= count - 1;
 
 
 endmodule
